@@ -8,6 +8,7 @@ export default function App() {
 	const [convertTo, setConvertTo] = useState("INR");
 	const [output, setOutput] = useState("");
 	const [error, setError] = useState("");
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		const controller = new AbortController();
@@ -15,6 +16,7 @@ export default function App() {
 		async function getConverted() {
 			try {
 				setError("");
+				setIsLoading(true);
 				if (amount <= 0) {
 					setOutput("");
 					return;
@@ -35,6 +37,8 @@ export default function App() {
 			} catch (error) {
 				console.log(error);
 				if (error.name !== "AbortError") setError(error.message);
+			} finally {
+				setIsLoading(false);
 			}
 		}
 
@@ -55,6 +59,7 @@ export default function App() {
 				}}
 			/>
 			<select
+				disabled={isLoading}
 				value={convertFrom}
 				onChange={(event) => {
 					setConvertFrom(event.target.value);
@@ -66,6 +71,7 @@ export default function App() {
 				<option value="INR">INR</option>
 			</select>
 			<select
+				disabled={isLoading}
 				value={convertTo}
 				onChange={(event) => {
 					setConvertTo(event.target.value);
@@ -76,6 +82,7 @@ export default function App() {
 				<option value="CAD">CAD</option>
 				<option value="INR">INR</option>
 			</select>
+			{isLoading && <p>Loading...</p>}
 			{!output && !error && <p></p>}
 			{!output && error && <p>{error}</p>}
 			{output && (
