@@ -1,11 +1,12 @@
-// `https://api.frankfurter.app/latest?amount=100&from=EUR&to=USD`
-
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Select from "./assets/Select";
+import Output from "./assets/Output";
+import Input from "./assets/Input";
 
 export default function App() {
 	const [amount, setAmount] = useState("");
-	const [convertFrom, setConvertFrom] = useState("CAD");
-	const [convertTo, setConvertTo] = useState("INR");
+	const [convertFrom, setConvertFrom] = useState("USD");
+	const [convertTo, setConvertTo] = useState("USD");
 	const [output, setOutput] = useState("");
 	const [error, setError] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
@@ -51,52 +52,16 @@ export default function App() {
 
 	return (
 		<div className="card">
-			<span>From:</span>
-			<select
-				disabled={isLoading}
-				value={convertFrom}
-				onChange={(event) => {
-					setConvertFrom(event.target.value);
-				}}
-			>
-				<option value="USD">USD</option>
-				<option value="EUR">EUR</option>
-				<option value="CAD">CAD</option>
-				<option value="INR">INR</option>
-			</select>
-			<span>To:</span>
-			<select
-				disabled={isLoading}
-				value={convertTo}
-				onChange={(event) => {
-					setConvertTo(event.target.value);
-				}}
-			>
-				<option value="USD">USD</option>
-				<option value="EUR">EUR</option>
-				<option value="CAD">CAD</option>
-				<option value="INR">INR</option>
-			</select>
-			<span>Amount:</span>
-			<input
-				type="number"
-				value={amount}
-				onChange={(event) => {
-					setAmount(event.target.value);
-				}}
-			/>
+			<h2>Exchange Rate Calculator</h2>
+			<Select value={convertFrom} onChange={setConvertFrom}>
+				From:
+			</Select>
+			<Select value={convertTo} onChange={setConvertTo}>
+				To:
+			</Select>
+			<Input amount={amount} setAmount={setAmount}></Input>
 
-			{isLoading && <p>Loading...</p>}
-			{!output && !error && <p> </p>}
-			{!output && error && <p>{error}</p>}
-			{!isLoading && output && (
-				<>
-					Result:
-					<p>
-						{output} {convertTo}
-					</p>
-				</>
-			)}
+			<Output isLoading={isLoading} output={output} error={error} convertTo={convertTo} />
 		</div>
 	);
 }

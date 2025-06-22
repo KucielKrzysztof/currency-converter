@@ -1,0 +1,23 @@
+const popularCurrencyCodes = [
+	"USD",
+	"EUR",
+	"GBP",
+	"JPY",
+	"CHF",
+	"CAD",
+	"AUD",
+	"CNY",
+	"HKD",
+	"SGD",
+	"SEK",
+	"NOK",
+	"DKK",
+	"PLN",
+	"MXN",
+	"INR",
+	"BRL",
+	"ZAR",
+	"KRW",
+	"TRY",
+];
+export default popularCurrencyCodes;
