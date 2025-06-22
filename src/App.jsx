@@ -22,7 +22,7 @@ export default function App() {
 					return;
 				}
 				if (convertFrom === convertTo) {
-					setOutput("Can't convert between same currency");
+					setOutput(<span style={{ color: "yellow" }}>Can't convert between same currency - </span>);
 					return;
 				}
 				const res = await fetch(`https://api.frankfurter.app/latest?amount=${amount}&from=${convertFrom}&to=${convertTo}`, {
@@ -50,14 +50,8 @@ export default function App() {
 	}, [amount, convertFrom, convertTo]);
 
 	return (
-		<div>
-			<input
-				type="number"
-				value={amount}
-				onChange={(event) => {
-					setAmount(event.target.value);
-				}}
-			/>
+		<div className="card">
+			<span>From:</span>
 			<select
 				disabled={isLoading}
 				value={convertFrom}
@@ -70,6 +64,7 @@ export default function App() {
 				<option value="CAD">CAD</option>
 				<option value="INR">INR</option>
 			</select>
+			<span>To:</span>
 			<select
 				disabled={isLoading}
 				value={convertTo}
@@ -82,13 +77,25 @@ export default function App() {
 				<option value="CAD">CAD</option>
 				<option value="INR">INR</option>
 			</select>
+			<span>Amount:</span>
+			<input
+				type="number"
+				value={amount}
+				onChange={(event) => {
+					setAmount(event.target.value);
+				}}
+			/>
+
 			{isLoading && <p>Loading...</p>}
-			{!output && !error && <p></p>}
+			{!output && !error && <p> </p>}
 			{!output && error && <p>{error}</p>}
-			{output && (
-				<p>
-					{output} {convertTo}
-				</p>
+			{!isLoading && output && (
+				<>
+					Result:
+					<p>
+						{output} {convertTo}
+					</p>
+				</>
 			)}
 		</div>
 	);

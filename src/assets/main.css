@@ -1,0 +1,70 @@
+/* Hide spin-button in input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin-top: 6rem;
+	min-height: 100vh;
+	font-family: Helvetica, Arial;
+	padding: 20px;
+	background-color: #242424;
+	display: flex;
+	justify-content: center;
+	color: white;
+	font-size: 1.5rem;
+	filter: drop-shadow(0 0 0.2em #646cffaa);
+}
+p {
+	font-weight: 800;
+	filter: drop-shadow(0 0 0.2em #646cffaa);
+	color: #535bf2;
+	width: 300px;
+	text-align: center;
+}
+input,
+select {
+	background-color: #1a1a1a;
+	color: white;
+	font-size: 1.2rem;
+	border: 1px solid #555;
+	padding: 0.7rem;
+	border-radius: 9999px;
+	text-align: center;
+}
+select {
+	width: 50%;
+	/* ↓↓↓ UKRYJ natywną strzałkę ↓↓↓ */
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+select:hover,
+input:hover {
+	transform: scale(1.03);
+	transition: transform 0.2s ease-in-out;
+	cursor: pointer;
+	filter: drop-shadow(0 0 0.2em #646cffaa);
+}
+
+span {
+	font-size: 1.3rem;
+}
+.card {
+	background-color: #1a1919;
+	border: 1px solid #555;
+	border-radius: 1.2rem;
+	padding: 3rem 1rem;
+	display: flex;
+	flex-direction: column;
+	min-width: 320px;
+	align-items: center;
+	gap: 10px;
+}
