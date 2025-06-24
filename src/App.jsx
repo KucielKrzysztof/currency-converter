@@ -52,7 +52,7 @@ export default function App() {
 
 	return (
 		<div className="card">
-			<h2>Exchange Rate Calculator</h2>
+			<h2> 💶Exchange💵 Rate Calculator</h2>
 			<Select value={convertFrom} onChange={setConvertFrom}>
 				From:
 			</Select>
