@@ -17,7 +17,7 @@ A simple and intuitive currency converter built with React. It lets users enter 
 ## Tech Stack
 
 - React <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="14" height="13" />
-- Frankfurter api <img src="https://api.nuget.org/v3-flatcontainer/frankfurter.api.client/1.0.0/icon" alt="Frankfurter Logo" width="14" height="13" />
+- Frankfurter api 
 - Vite <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/2078px-Vitejs-logo.svg.png" alt="Vite Logo" width="14" height="13" />
 
 - HTML5 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML logo" width="15" height="15" />
