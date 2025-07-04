@@ -1,5 +1,5 @@
 import SelectOption from "./SelectOption";
-import popularCurrencyCodes from "./currencies";
+import popularCurrencyCodes from "../assets/currencies";
 
 export default function Select({ children, isLoading, value, onChange }) {
 	return (

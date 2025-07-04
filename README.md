@@ -1,12 +1,44 @@
-# React + Vite
+# Exchange Rate Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and intuitive currency converter built with React. It lets users enter an amount, select currencies, and instantly see converted values using a reliable currency exchange API.
 
-Currently, two official plugins are available:
+> [!WARNING]
+> This project was developed personally as a learning exercise and an experiment with React and API integration. It is not intended for everyday use and is not deployed or hosted publicly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- 💵 Enter amount to convert between currencies.
+- 🌍 Select from a wide range of currencies.
+- 🔄 Instant conversion with up-to-date exchange rates.
+- ♻️ Swap currencies easily.
+- 🧠 Intuitive UX with responsive design.
+- ⚠️ Error handling for invalid input or API failures.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="14" height="13" />
+- Frankfurter api <img src="https://api.nuget.org/v3-flatcontainer/frankfurter.api.client/1.0.0/icon" alt="Frankfurter Logo" width="14" height="13" />
+- Vite <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/2078px-Vitejs-logo.svg.png" alt="Vite Logo" width="14" height="13" />
+
+- HTML5 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML logo" width="15" height="15" />
+- CSS <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS Logo" width="15" height="15" />
+
+## Screenshots
+
+### Main Converter
+
+![main](./screenshots/main.png)
+
+### Converted Results
+
+![main](./screenshots/res1.png)
+![main](./screenshots/res2.png)
+
+## How to run
+
+```bash
+git clone https://github.com/KucielKrzysztof/currency-converter.git
+cd currency-converter
+npm i
+npm run dev
+```

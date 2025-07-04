@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Select from "./assets/Select";
-import Output from "./assets/Output";
-import Input from "./assets/Input";
+import Select from "./Components/Select";
+import Output from "./Components/Output";
+import Input from "./Components/Input";
 
 export default function App() {
 	const [amount, setAmount] = useState("");
